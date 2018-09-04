@@ -1,0 +1,31 @@
+.App {
+  text-align: center;
+  height: 100%;
+  width: 70%;
+  margin: auto;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.logo {
+  font-family: 'Lobster';
+  color: white;
+  font-size: 2em;
+}
+
+.oval {
+  width: 20%;
+  height: 35%;
+  background: #72bcd4;
+  border-radius: 50%;
+}
