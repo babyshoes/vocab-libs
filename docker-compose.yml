@@ -1,0 +1,27 @@
+version: '3.6'
+
+services:
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    volumes:
+      - './backend:/usr/src/app'
+    ports:
+      - 5000:5000
+    environment:
+      - FLASK_APP=project/__init__.py
+      - FLASK_ENV=development
+      - APP_SETTINGS=config.DevelopmentConfig
+      - DATABASE_URL=postgres://postgres:postgres@db:5432/dev
+      - DATABASE_TEST_URL=postgres://postgres:postgres@db:5432/test
+  db:
+    build:
+      context: ./db
+      dockerfile: Dockerfile
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
